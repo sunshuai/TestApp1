@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<p align="center"><a href="pizzahut://actdetail?actid=edf50838183facedbadf504d704c5cb2" style="height:40px; width:50%; line-height:40px; font-size:24px; display:block; text-align:center; margin:10px auto; background:#ccc;">活动详情</a></p>
+<p align="center"><a href="pizzahut://showsharedialog" style="height:40px; width:50%; line-height:40px; font-size:24px; display:block; text-align:center; margin:10px auto; background:#ccc;">分享弹窗</a></p>
+<p align="center"><a href="pizzahut://mymedal?medalUrl=http://www.baidu.com" style="height:40px; width:50%; line-height:40px; font-size:24px; display:block; text-align:center; margin:10px auto; background:#ccc;">我的徽章</a></p>
+<p align="center"><a href="pizzahut://news" style="height:40px; width:50%; line-height:40px; font-size:24px; display:block; text-align:center; margin:10px auto; background:#ccc;">首页</a></p>
+<p align="center"><a href="pizzahut://menu" style="height:40px; width:50%; line-height:40px; font-size:24px; display:block; text-align:center; margin:10px auto; background:#ccc;">美味菜单</a></p>
+<p align="center"><a href="pizzahut://local" style="height:40px; width:50%; line-height:40px; font-size:24px; display:block; text-align:center; margin:10px auto; background:#ccc;">签到必胜客</a></p>
+<p align="center"><a href="pizzahut://login" style="height:40px; width:50%; line-height:40px; font-size:24px; display:block; text-align:center; margin:10px auto; background:#ccc;">个人中心</a></p>
+<p align="center"><a href="pizzahut://shopbyphone" style="height:40px; width:50%; line-height:40px; font-size:24px; display:block; text-align:center; margin:10px auto; background:#ccc;">必胜宅急送</a></p>
+<p align="center"><a href="pizzahut://fragmentindex?targetid=0" style="height:40px; width:50%; line-height:40px; font-size:24px; display:block; text-align:center; margin:10px auto; background:#ccc;">Android2.2.1首页</a></p>
+<p align="center"><a href="pizzahut://fragmentindex?targetid=1" style="height:40px; width:50%; line-height:40px; font-size:24px; display:block; text-align:center; margin:10px auto; background:#ccc;">Android2.2.1美味菜单</a></p>
+<p align="center"><a href="pizzahut://fragmentindex?targetid=2" style="height:40px; width:50%; line-height:40px; font-size:24px; display:block; text-align:center; margin:10px auto; background:#ccc;">Android2.2.1签到必胜客</a></p>
+<p align="center"><a href="pizzahut://fragmentindex?targetid=3" style="height:40px; width:50%; line-height:40px; font-size:24px; display:block; text-align:center; margin:10px auto; background:#ccc;">Android2.2.1个人中心</a></p>
+<p align="center"><a href="pizzahut://fragmentindex?targetid=4" style="height:40px; width:50%; line-height:40px; font-size:24px; display:block; text-align:center; margin:10px auto; background:#ccc;">Android2.2.1必胜宅急送</a></p>
+<script type="text/javascript">
+
+function Map(){
+	this.container = new Object();
+}
+
+Map.prototype.put = function(key, value){
+	this.container[key] = value;
+}
+
+Map.prototype.get = function(key){
+	return this.container[key];
+}
+
+Map.prototype.keySet = function() {
+	var keyset = new Array();
+	var count = 0;
+	for (var key in this.container) {
+		// 跳过object的extend函数
+		if (key == 'extend') {
+			continue;
+		}
+		keyset[count] = key;
+		count++;
+	}
+	return keyset;
+}
+
+function onCustom() {
+	var arr = [];
+	for ( var i = 0; i < 8; i++) {
+		if(i==0){
+			arr[i] = 'test';//再通过节点对象获取里面的数据
+		}else if(i==1){
+			arr[i] = 'test11111';//再通过节点对象获取里面的数据
+		}else{
+			arr[i] = 'test22222';//再通过节点对象获取里面的数据
+		}
+	}
+	BiEvent.onBICustomEvent('test1','test1',arr);
+}
+function onClick() {
+	var arr = [];
+	for ( var i = 0; i < 8; i++) {
+		if(i==0){
+			arr[i] = 'test';//再通过节点对象获取里面的数据
+		}else if(i==1){
+			arr[i] = 'test11111';//再通过节点对象获取里面的数据
+		}else{
+			arr[i] = 'test22222';//再通过节点对象获取里面的数据
+		}
+	}
+	BiEvent.onBIClickEvent('test2','test2',arr);
+}
+</script>
+<p align="center"><a onclick="onCustom()" style="height:40px; width:50%; line-height:40px; font-size:24px; display:block; text-align:center; margin:10px auto; background:#ccc;">用户自定义BI事件</a></p>
+<p align="center"><a onclick="onClick()" style="height:40px; width:50%; line-height:40px; font-size:24px; display:block; text-align:center; margin:10px auto; background:#ccc;">用户点击事件</a></p>
+</body>
+</html>
